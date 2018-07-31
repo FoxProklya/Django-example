@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+<body style= "background-color: white"> ЦВЕТ
+  {% include 'mainapp/includes/some_html.html'%}
+
+
+  <div class="jumbotron">
+      <div class="container">
+        <h1>{% include "mainApp/includes/some_html.html" %}</h1>
+        <p>
+          {% block content %}
+          {% endblock %}
+        </p>
+        <p>
+          <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+          <a href="/news" class="btn btn-primary btn-lg">Новости &raquo;</a>
+          <a href="/contact" class="btn btn-info btn-lg">Контакты &raquo;</a>
+          <a href="/admin" class="btn btn-success btn-lg"> Администрация &raquo;</a>
+          <a href="/webexample" class="btn btn-info btn-lg">Hello world &raquo;</a>
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <img src="{% static 'mainapp/image/art1.jpg' %}" class="img-thumbnail">
+      <hr>
+      &copy; Все права защищены 2018
+    </div>
+
+
+</body>
+</html>
